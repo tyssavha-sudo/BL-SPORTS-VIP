@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BL Sports BR — Grupo VIP no WhatsApp</title>
+<meta name="description" content="Entre no grupo VIP da BL Sports BR e receba ofertas exclusivas de camisas de futebol todo dia.">
+<style>
+  :root{
+    --red: #e0212b;
+    --red-glow: #ff2d3a;
+    --black: #0a0908;
+    --black-2: #141210;
+    --white: #f5f3ef;
+    --grey: #9a938c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: radial-gradient(120% 90% at 50% 0%, #1a1512 0%, var(--black) 55%, #050403 100%);
+    color: var(--white);
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    width:100%;
+    max-width:520px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+
+  /* subtle stadium light flicker on the frame edges */
+  .page::before, .page::after{
+    content:"";
+    position:fixed;
+    top:0; bottom:0;
+    width:40px;
+    background: repeating-linear-gradient(180deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+    pointer-events:none;
+    max-width:520px;
+  }
+
+  header.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:18px 20px 10px;
+  }
+  header.brand .logo{
+    width:44px; height:44px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 0 3px rgba(224,33,43,0.15), 0 4px 14px -2px rgba(224,33,43,0.5);
+    flex-shrink:0;
+  }
+  header.brand .id{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+  }
+  header.brand .id b{
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-size:14px;
+    color:var(--white);
+  }
+  header.brand .id .live{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:10.5px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--grey);
+  }
+  header.brand .id .live .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--red);
+    box-shadow: 0 0 8px var(--red-glow);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1; transform:scale(1);}
+    50%{opacity:.4; transform:scale(.75);}
+  }
+
+  .hero-frame{
+    margin: 4px 16px 0;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px -20px rgba(224,33,43,0.35), 0 0 0 1px rgba(0,0,0,0.4);
+    position:relative;
+  }
+  .hero-frame img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding: 22px 22px 10px;
+    text-align:center;
+    gap:14px;
+  }
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color: var(--red-glow);
+    font-weight:700;
+  }
+
+  .headline{
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-weight:400;
+    letter-spacing:0.5px;
+    font-size: clamp(24px, 7vw, 32px);
+    line-height:1.1;
+    text-transform:uppercase;
+  }
+  .headline em{
+    font-style:normal;
+    color:var(--red);
+    text-shadow: 0 0 18px rgba(255,45,58,0.55);
+  }
+
+  .subtext{
+    color: var(--grey);
+    font-size:15px;
+    line-height:1.5;
+    max-width:380px;
+  }
+
+  .cta-wrap{
+    width:100%;
+    padding: 8px 22px 26px;
+  }
+
+  .cta{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    padding:18px 20px;
+    border-radius:14px;
+    background: linear-gradient(180deg, #ff363f, var(--red) 60%, #b0161e);
+    color:#fff;
+    text-decoration:none;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    font-size:18px;
+    box-shadow: 0 10px 30px -6px rgba(224,33,43,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
+    border:1px solid rgba(255,255,255,0.15);
+    animation: cta-breathe 2.4s ease-in-out infinite;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta:active{ transform: translateY(1px) scale(0.99); }
+  @keyframes cta-breathe{
+    0%,100%{ box-shadow: 0 10px 30px -6px rgba(224,33,43,0.55), inset 0 1px 0 rgba(255,255,255,0.25);}
+    50%{ box-shadow: 0 10px 42px -4px rgba(255,45,58,0.85), inset 0 1px 0 rgba(255,255,255,0.35);}
+  }
+  .cta svg{ width:24px; height:24px; flex-shrink:0; }
+  .cta .lines{ display:flex; flex-direction:column; align-items:flex-start; line-height:1.15; }
+  .cta .lines small{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:1.5px;
+    color:rgba(255,255,255,0.85);
+  }
+
+  .microcopy{
+    text-align:center;
+    color:var(--grey);
+    font-size:12px;
+    margin-top:12px;
+    letter-spacing:0.3px;
+  }
+
+  .trust{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    padding: 6px 22px 30px;
+    color:var(--grey);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .trust span{ display:flex; align-items:center; gap:6px; }
+  .trust svg{ width:14px; height:14px; stroke:var(--red-glow); flex-shrink:0; }
+
+  footer{
+    text-align:center;
+    padding:14px 20px 26px;
+    color:#4a453f;
+    font-size:10.5px;
+    letter-spacing:0.5px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cta, header.brand .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="brand">
+    <img class="logo" src="logo.jpeg" alt="Logo BL Sports">
+    <div class="id">
+      <b>BL Sports BR</b>
+      <span class="live"><span class="dot"></span>Ofertas ativas agora</span>
+    </div>
+  </header>
+
+  <div class="hero-frame">
+    <img src="banner.png" alt="Camisa do seu time a partir de R$139,99 — BL Sports BR">
+  </div>
+
+  <main>
+    <div class="eyebrow">Acesso liberado por tempo limitado</div>
+    <h1 class="headline">Antes de tudo, <em>entre no grupo</em></h1>
+    <p class="subtext">Preços com desconto, lançamentos e reposições saem primeiro pra quem está no grupo VIP. Toque abaixo e garanta sua vaga.</p>
+  </main>
+
+  <div class="cta-wrap">
+    <a class="cta" href="https://chat.whatsapp.com/CtoEYHrEZo7JHEm1Maym8F?mode=gi_t" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.479L4 29l7.706-1.877A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.98 16.303c-.297.835-1.474 1.53-2.404 1.727-.64.135-1.475.243-4.286-.92-3.598-1.49-5.914-5.146-6.096-5.386-.176-.24-1.453-1.934-1.453-3.69 0-1.755.917-2.618 1.243-2.977.297-.327.646-.409.862-.409.216 0 .432.002.62.011.216.01.481-.081.752.574.297.72.984 2.475 1.068 2.655.084.18.14.39.028.63-.111.24-.167.39-.334.6-.166.21-.348.469-.497.63-.166.18-.34.375-.146.735.194.36.86 1.42 1.847 2.3 1.269 1.13 2.34 1.48 2.7 1.645.36.166.57.14.78-.084.21-.225.897-1.05 1.135-1.41.238-.36.478-.3.806-.18.328.12 2.086.984 2.443 1.164.358.18.596.27.684.42.09.15.09.87-.207 1.705z"/></svg>
+      <span class="lines">
+        Entrar no grupo VIP
+        <small>Ofertas exclusivas todo dia</small>
+      </span>
+    </a>
+    <p class="microcopy">Você será direcionado ao WhatsApp</p>
+  </div>
+
+  <div class="trust">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/></svg>Produtos de qualidade</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 21 12 17 8 21V13a4 4 0 0 1 8 0z"/><circle cx="12" cy="7" r="4"/></svg>Diversos times</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>Envio p/ todo Brasil</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Compra 100% segura</span>
+  </div>
+
+  <footer>© BL Sports BR — grupo exclusivo de ofertas via WhatsApp</footer>
+</div>
+</body>
+</html>
